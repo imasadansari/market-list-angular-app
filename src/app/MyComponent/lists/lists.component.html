@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="text-center mb-3">Market List by @imasadansari</h1>
+
+    <app-add-market-list (marketlistAdd)="addMarketList($event)"></app-add-market-list>
+    <h4>Your Market Lists</h4>
+    <div *ngIf="this.marketlists.length===0; else elseBlock">No Active Market List.</div>
+    <ng-template #elseBlock>
+        <div *ngFor="let listd of marketlists">
+            <app-list-item [marketlist]="listd" (marketlistDelete)="deleteMarketList($event)"
+                (marketlistCheckbox)="toggleMarketList($event)"></app-list-item>
+        </div>
+    </ng-template>
+</div>

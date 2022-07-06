@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'market-list';
+  constructor() {
+    // setTimeout(() => {
+    //   this.title ="Changed TItle"
+    // }, 3000);
+  }
 }
